@@ -48,8 +48,8 @@ string face;
 void curlfunc(int mid)
 {
 
-    string url("http://115.157.248.14:5244/d/ntfs/Users/lty/Downloads/card%20(1).customization?sign=wiJGf53Qsk9eZNo9MvVTHDNWVDEQUAbo-iXVCUIOWG4=:0");
-    //url.append(to_string(mid));
+    string url("https://api.bilibili.com/x/web-interface/card?mid=");
+    url.append(to_string(mid));
     string faceurl = "";
 
     CURL* curl = curl_easy_init();
@@ -63,6 +63,10 @@ void curlfunc(int mid)
 
     // Follow HTTP redirects if necessary.
     curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+
+
+    //Set HTTP proxy
+    curl_easy_setopt(curl, CURLOPT_PROXY, "http://127.0.0.1:7890");
 
     // Response information.
     long httpCode(0);
