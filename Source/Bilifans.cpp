@@ -66,7 +66,7 @@ void curlfunc(int mid)
 
 
     //Set HTTP proxy
-    curl_easy_setopt(curl, CURLOPT_PROXY, "http://127.0.0.1:7890");
+    curl_easy_setopt(curl, CURLOPT_PROXY, "http://127.0.0.1:7890"); 
 
     // Response information.
     long httpCode(0);
